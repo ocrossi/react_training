@@ -6,14 +6,34 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Logo from '../assets/logo.png'
 
+
+function Weblogo() {
+	return (
+			<Image 	height="100" src={Logo}/>
+	);
+}
+
+function Account_button() {
+	return (
+		<Row id="right_topnav_right">
+		<Col md={10}></Col>
+		<Col>
+			<Button bS="btn btn-primary lg" id="acc_bt">Mon compte</Button>
+		</Col>
+		</Row>
+	);
+}
+
 function Topnav () {
 	return (
 	  <Container fluid>
 	  <Row size="big" id="fat">
-		<Col sm={4} id="test">
-			<Image src={Logo} height="150px" />
+		<Col sm={2} id="left_topnav">
+			<Weblogo />
 		</Col>
-	    <Col sm={8}>sm=8</Col>
+	    <Col sm={10} id="right_topnav">
+			<Account_button/>
+		</Col>
 	  </Row>
 	  </Container>
 	);

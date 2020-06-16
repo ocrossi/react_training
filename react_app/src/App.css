@@ -1,14 +1,29 @@
+.tow{
+  border:2px solid red;
+}
 
-
-#test{
+#left_topnav{
   background-color: grey;
+  border:2px solid black;
+}
+
+#right_topnav{
+	text-align: center;
+	margin: 0 auto;
+	border:2px solid black;
+}
+
+#right_topnav_right{
+	margin-top: 2em;
+	align-items: center;
+    justify-content: center;
+}
+#acc_bt{
+	item-align: center
 }
 
 #fat {
-  background-color: blue;
+  background-color: grey;
   height: 100%;
 }
 
-.my_topnav {
-	height: 80%;
-}

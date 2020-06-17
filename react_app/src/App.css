@@ -1,7 +1,19 @@
-.tow{
-  border:2px solid red;
+
+.tow2{
+  border:2px solid black;
+	text-align: center;
+	align-items: center;
+  justify-content: center;
 }
 
+
+.left_button{
+	margin-top: 2em;
+}
+
+#last_lb{
+	margin-bottom: 3em;
+}
 #left_topnav{
   background-color: grey;
   border:2px solid black;
@@ -14,7 +26,7 @@
 }
 
 #right_topnav_right{
-	margin-top: 2em;
+	margin-top: 1.5em;
 	align-items: center;
     justify-content: center;
 }
@@ -26,4 +38,5 @@
   background-color: grey;
   height: 100%;
 }
-
+#logo{
+}

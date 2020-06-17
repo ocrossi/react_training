@@ -5,37 +5,38 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-var Leftnav = () =>
+var Bottom_leftnav = () =>
 {
 	return (
-		
 		<Col sm={2} className="tow2">
-			<Button size="lg" variant="warning" className="left_button">Nouveau client</Button>
 			<Button size="lg" variant="info" className="left_button">Effacer client</Button>
-			<Button size="lg" variant="info" className="left_button">Modifier Client</Button>
-			<Button size="lg" variant="info" className="left_button" id="last_lb">Donnees Client</Button>
+			<Button size="lg" variant="info" className="left_button" id="last_blf">Modifier Client</Button>
 		</Col>
 	);
+
 }
 
-var AppWindow = () => {
+var Bottom_main = () =>
+{
 	return (
 		<Col sm={10} className="main_app">
-			<p>haha</p>
+			<p>hehe</p>
 		</Col>
+
 	);
 }
 
-function AppBody() {
+var Footer = () =>
+{
 	return (
 		<Container fluid>
 		<Row>
-			<Leftnav/>
-			<AppWindow/>
+			<Bottom_leftnav/>
+			<Bottom_main/>
 		</Row>
 		</Container>
 
 	);
 }
 
-export default AppBody
+export default Footer

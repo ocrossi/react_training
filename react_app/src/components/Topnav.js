@@ -9,7 +9,7 @@ import Logo from '../assets/logo.png'
 
 function Weblogo() {
 	return (
-			<Image 	height="100" src={Logo}/>
+			<Image 	height="100" src={Logo} id="logo"/>
 	);
 }
 

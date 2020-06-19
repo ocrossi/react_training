@@ -9,8 +9,8 @@ var Bottom_leftnav = () =>
 {
 	return (
 		<Col sm={2} className="tow2">
-			<Button size="lg" variant="info" className="left_button">Effacer client</Button>
-			<Button size="lg" variant="info" className="left_button" id="last_blf">Modifier Client</Button>
+			<Button size="lg" variant="info" className="left_button">Footer f1</Button>
+			<Button size="lg" variant="info" className="left_button" id="last_blf">Footer f2</Button>
 		</Col>
 	);
 

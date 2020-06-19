@@ -18,7 +18,7 @@ function Account_button() {
 		<Row id="right_topnav_right">
 		<Col md={10}></Col>
 		<Col>
-			<Button bS="btn btn-primary" variant="dark" size="lg" id="acc_bt">Mon compte</Button>
+			<Button className="btn btn-primary" variant="dark" size="lg" id="acc_bt">Mon compte</Button>
 		</Col>
 		</Row>
 	);

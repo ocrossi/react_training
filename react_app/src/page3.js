@@ -1,5 +1,5 @@
 import React from 'react';
-import AppBody from './components/AppBody'
+import AppBody1 from './components/AppBody1'
 import Footer from './components/Footer'
 import ClientContext from './context'
 
@@ -10,7 +10,7 @@ function Page3()
 	console.log(user)
 
 	return(
-		<AppBody/>
+		<AppBody1/>
 	);
 
 }

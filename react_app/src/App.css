@@ -16,6 +16,21 @@
 	margin-top: 2em;
 }
 
+.formulaire {
+	margin-top: 2em;
+	display: flex;
+	flex-direction: column;
+  border:3px solid black;
+}
+
+#idclient {
+	margin-top: 4em;
+}
+#buttonclient {
+	margin-top: 3em;
+	margin-bottom: 6em;
+}
+
 #last_lb{
 	margin-bottom: 5em;
 }

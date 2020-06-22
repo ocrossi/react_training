@@ -14,10 +14,10 @@ function Leftnav()
 			<Link to="page1">
 				<Button size="lg" variant="info" className="left_button"> Page 1 </Button>
 			</Link>		
-			<Link to="page1">
+			<Link to="page2">
 				<Button size="lg" variant="info" className="left_button"> Page 2 </Button>
 			</Link>
-			<Link to="page1">
+			<Link to="page3">
 				<Button size="lg" variant="info" className="left_button" id="last_lb"> Page 3 </Button>
 			</Link>
 		</Col>

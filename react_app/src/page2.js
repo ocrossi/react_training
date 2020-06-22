@@ -1,5 +1,5 @@
 import React from 'react';
-import AppBody1 from './components/AppBody1'
+import AppBody2 from './components/AppBody2'
 import Footer from './components/Footer'
 
 import { Route, Switch } from 'react-router-dom'
@@ -12,10 +12,7 @@ function Page2()
 	const user = React.useContext(ClientContext)
 	console.log(user)
 	return(
-		<React.Fragment>
-		<AppBody1/>
-		<Button type="submit" onClick={() => <Redirect to="/page1"/>}>hehe</Button>
-		</React.Fragment>
+		<AppBody2/>
 	);
 
 }

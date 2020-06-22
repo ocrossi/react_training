@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 function App() {
-	const [user, setUser] = React.useState({name : "test", gender: "male", id: 0})
+	const [user, setUser] = React.useState({})
 	var cc = {user, setUser}
 	  return (
 	  <ClientProvider value={cc}>

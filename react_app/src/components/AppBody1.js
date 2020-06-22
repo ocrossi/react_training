@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import ClientContext from '../context'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import useForm from 'react-hook-form'
-
+import Leftnav from './Leftnav'
+import { useForm } from "react-hook-form";
 
 
 
@@ -25,10 +25,9 @@ class MyComponent extends React.Component {
 	}
 	onSubmit = (data) => {
 		console.log(data)
+		this.props.hf.setUser(data)
 	}
 	renderRedirect = () => {
-		console.log("salut les tests");
-		console.log(this.context);
 		if (this.state.redirect) {
 			return <Redirect to='/page2' />
 		}
@@ -36,50 +35,45 @@ class MyComponent extends React.Component {
 	render () {
 		return (
 			<div>
-		<Form onSubmit={this.handleSubmit}>
-			<Form.Label column sm={12}>
-				Peux tu indiquer l'identite du patient?
-			</Form.Label>
-		      <Form.Control type="text" name="clientname" id="idclient" ref={this.register}/>
-			{this.renderRedirect()}
-			<Button type="submit" onClick={this.setRedirect}>Send</Button>
-		</Form>
+				{this.renderRedirect()}
+				<Button type="submit" onClick={this.setRedirect}>Send</Button>
 			</div>
 		)
 	}
 }
 
-
-
-var Leftnav = () =>
-{
-
-	return (
-		<Col sm={2} className="tow2">
-		<Link to="/">
-		<Button size="lg" variant="warning" className="left_button">Nouveau client</Button>
-		</Link>
-		<Button size="lg" variant="info" className="left_button">Fonction 1</Button>
-		<Button size="lg" variant="info" className="left_button">Fonction 2</Button>
-		<Button size="lg" variant="info" className="left_button" id="last_lb">Fonction 3</Button>
-		</Col>
-	);
-}
-
 var AppWindow1 = () => {
 	const {register, handleSubmit} = useForm();
+	var hookform = {register, handleSubmit}
+	const ct = React.useContext(ClientContext)
 
-	hookform = {register, handleSubmit}
+	const formSubmit = (data) => {
+		console.log(data)
+		console.log("dans onSubmit le context")
+		console.log(ct)
+		ct.setUser(data.clientname)
+
+	}
+
 	return (
 		<Col xl={10} className="main_app">
 		<div className="formulaire">
-		<MyComponent hf={hookform}/>
-		{console.log()}
+		<Form onSubmit={handleSubmit(formSubmit)}>
+			<Form.Label column sm={12}>
+				Peux tu indiquer l'identite du patient?
+			</Form.Label>
+		    <Form.Control type="text" name="clientname" id="idclient" ref={register}/>
+			<Link to="/page2">
+				<Button type="submit">Submit</Button>
+			</Link>
+		</Form>
+
 		</div>
 		</Col>
 	);
 }
 
+			//<MyComponent hf={ct}/>
 
 
 function AppBody1() {

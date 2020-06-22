@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Route, Redirect, Switch } from 'react-router-dom'
 import Leftnav from './Leftnav'
 import ClientContext from '../context'
 import { Link } from 'react-router-dom'
@@ -12,9 +11,9 @@ var AppWindow2 = () => {
 	const ct = React.useContext(ClientContext)
 	const fillContext = (gender) =>
 	{
-		if (gender == 0)
+		if (gender === 0)
 			ct.setUser({...ct.user, gender: "male"})
-		else if (gender == 1)
+		else if (gender === 1)
 			ct.setUser({...ct.user, gender: "female"})
 	}
 

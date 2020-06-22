@@ -3,46 +3,15 @@ import {Container, Button, Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import ClientContext from '../context'
-import { Route, Redirect, Switch } from 'react-router-dom'
 import Leftnav from './Leftnav'
 import { useForm } from "react-hook-form";
 import RightArrow from '../assets/RightArrow.png'
 import Image from 'react-bootstrap/Image'
 
 
-class MyComponent extends React.Component {
-		static contextType = ClientContext
-	state = {
-
-		redirect: false
-	}  
-	setRedirect = () => {
-		this.setState({
-			redirect: true
-		})
-	}
-	onSubmit = (data) => {
-		console.log(data)
-		this.props.hf.setUser(data)
-	}
-	renderRedirect = () => {
-		if (this.state.redirect) {
-			return <Redirect to='/page2' />
-		}
-	}  
-	render () {
-		return (
-			<div>
-				{this.renderRedirect()}
-				<Button type="submit" onClick={this.setRedirect}>Send</Button>
-			</div>
-		)
-	}i
-}
-
 function Arrow(props) {
 	console.log(props)
-	if (props.val.user.id != 0)
+	if (props.val.user.id !== 0)
 		return (
 			<Link to="/page2">
 				<Image width="100" src={RightArrow}/>
@@ -55,7 +24,6 @@ function Arrow(props) {
 
 var AppWindow1 = () => {
 	const {register, handleSubmit} = useForm();
-	var hookform = {register, handleSubmit}
 	const ct = React.useContext(ClientContext)
 
 	const formSubmit = (data) => {

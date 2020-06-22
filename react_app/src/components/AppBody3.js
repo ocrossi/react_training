@@ -10,9 +10,9 @@ var AppWindow3 = () => {
 	const Result = () =>
 	{
 		var res = ""
-		if (ct.user.gender == "male")
+		if (ct.user.gender === "male")
 			res = "Monsieur " + ct.user.name
-		else if (ct.user.gender == "female")
+		else if (ct.user.gender === "female")
 			res = "Madame " + ct.user.name
 		return (<p>{res}</p>)
 	}

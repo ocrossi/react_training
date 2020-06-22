@@ -27,10 +27,11 @@ var AppWindow1 = () => {
 	const ct = React.useContext(ClientContext)
 
 	const formSubmit = (data) => {
-		ct.setUser({name: data.clientname})
-		console.log("dans onSubmit le context")
+		var fullname = data.clientfname + " " + data.clientlname
+		ct.setUser({name: fullname})
 		console.log(ct)
-		ct.id = 1
+		console.log(data)
+		ct.id = 1 
 
 	}
 
@@ -41,7 +42,14 @@ var AppWindow1 = () => {
 			<Form.Label column sm={12}>
 				Peux tu indiquer l'identite du patient?
 			</Form.Label>
-		    <Form.Control type="text" name="clientname" id="idclient" ref={register}/>
+			<Form.Label column sm={6}>
+				Nom
+		    <Form.Control type="text" name="clientfname"  ref={register}/>
+			</Form.Label>
+			<Form.Label column sm={6}>
+				Prenom
+		    <Form.Control type="text" name="clientlname"  ref={register}/>
+			</Form.Label>
 			<Button type="submit">Submit</Button>
 		</Form>
 		<Arrow val={ct}/>

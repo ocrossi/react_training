@@ -8,12 +8,18 @@ function Leftnav()
 
 	return (
 		<Col sm={2} className="tow2">
-		<Link to="/">
-		<Button size="lg" variant="warning" className="left_button">Nouveau client</Button>
-		</Link>
-		<Button size="lg" variant="info" className="left_button">Fonction 1</Button>
-		<Button size="lg" variant="info" className="left_button">Fonction 2</Button>
-		<Button size="lg" variant="info" className="left_button" id="last_lb">Fonction 3</Button>
+			<Link to="/">
+				<Button size="lg" variant="warning" className="left_button">Nouveau client</Button>
+			</Link>
+			<Link to="page1">
+				<Button size="lg" variant="info" className="left_button"> Page 1 </Button>
+			</Link>		
+			<Link to="page1">
+				<Button size="lg" variant="info" className="left_button"> Page 2 </Button>
+			</Link>
+			<Link to="page1">
+				<Button size="lg" variant="info" className="left_button" id="last_lb"> Page 3 </Button>
+			</Link>
 		</Col>
 	);
 }

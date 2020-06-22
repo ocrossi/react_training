@@ -10,6 +10,7 @@ import ClientContext from './context'
 function Page2()
 {
 	const user = React.useContext(ClientContext)
+	console.log("Dans page 2 directement")
 	console.log(user)
 	return(
 		<AppBody2/>

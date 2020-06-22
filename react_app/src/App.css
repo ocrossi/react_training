@@ -1,9 +1,26 @@
+.result{
+	font-size: 2em;
+	text-align: center;
+	align-items: center;
+  justify-content: center;
 
+}
 .tow2{
   border:3px solid black;
 	text-align: center;
 	align-items: center;
   justify-content: center;
+}
+
+.approw{
+	margin-top:15em;
+	text-align: center;
+	align-items: center;
+  justify-content: center;
+
+}
+.sexbutton {
+	margin: 2em;
 }
 
 .main_app{

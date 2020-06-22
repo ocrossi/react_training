@@ -12,21 +12,23 @@ var AppWindow2 = () => {
 	const ct = React.useContext(ClientContext)
 	const fillContext = (gender) =>
 	{
-		console.log("On est dans l'app window 2, dans fill context")
-		console.log(ct)
 		if (gender == 0)
-			ct.setUser({username: ct.user, gender: "male"})
-		if (gender == 1)
-			ct.setUser({username: ct.user, gender: "female"})
-		console.log(ct)
+			ct.setUser({...ct.user, gender: "male"})
+		else if (gender == 1)
+			ct.setUser({...ct.user, gender: "female"})
 	}
 
 	return (
 		<Col xl={10} className="main_app">
-			<Link to="/page3">
-				<Button onClick={() => fillContext(0)}>Male </Button>
-				<Button onClick={() => fillContext(1)}>Female </Button>
-			</Link>
+			<Row size="lg" className="approw">
+				<p>Peux-tu indiquer son sexe? </p>
+			</Row>
+			<Row className="approw">
+				<Link to="/page3">
+					<Button onClick={() => fillContext(0)} className="sexbutton">Homme </Button>
+					<Button onClick={() => fillContext(1)} className="sexbutton">Femme </Button>
+				</Link>
+			</Row>
 		</Col>
 
 	);

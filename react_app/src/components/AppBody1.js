@@ -1,15 +1,13 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Container, Button, Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import ClientContext from '../context'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import Leftnav from './Leftnav'
 import { useForm } from "react-hook-form";
-
+import RightArrow from '../assets/RightArrow.png'
+import Image from 'react-bootstrap/Image'
 
 
 class MyComponent extends React.Component {
@@ -39,7 +37,20 @@ class MyComponent extends React.Component {
 				<Button type="submit" onClick={this.setRedirect}>Send</Button>
 			</div>
 		)
-	}
+	}i
+}
+
+function Arrow(props) {
+	console.log(props)
+	if (props.val.user.id != 0)
+		return (
+			<Link to="/page2">
+				<Image width="100" src={RightArrow}/>
+			</Link>
+		);
+	else
+		return (<p></p>);
+
 }
 
 var AppWindow1 = () => {
@@ -48,10 +59,10 @@ var AppWindow1 = () => {
 	const ct = React.useContext(ClientContext)
 
 	const formSubmit = (data) => {
-		console.log(data)
+		ct.setUser({name: data.clientname})
 		console.log("dans onSubmit le context")
 		console.log(ct)
-		ct.setUser(data.clientname)
+		ct.id = 1
 
 	}
 
@@ -63,17 +74,13 @@ var AppWindow1 = () => {
 				Peux tu indiquer l'identite du patient?
 			</Form.Label>
 		    <Form.Control type="text" name="clientname" id="idclient" ref={register}/>
-			<Link to="/page2">
-				<Button type="submit">Submit</Button>
-			</Link>
+			<Button type="submit">Submit</Button>
 		</Form>
-
+		<Arrow val={ct}/>
 		</div>
 		</Col>
 	);
 }
-
-			//<MyComponent hf={ct}/>
 
 
 function AppBody1() {

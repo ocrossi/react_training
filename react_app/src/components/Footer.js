@@ -20,7 +20,6 @@ var Bottom_main = () =>
 {
 	return (
 		<Col sm={10} className="main_app">
-			<p>hehe</p>
 		</Col>
 
 	);
